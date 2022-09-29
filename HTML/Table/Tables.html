@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabelas</title>
+  </head>
+  <body>
+    <!-- <table>
+       
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+      </tr>
+
+      <tr>
+        <td>Mayk</td>
+        <td>35</td>
+      </tr>
+      <tr>
+        <td>Tiago</td>
+        <td>35</td>
+      </tr>
+    </table> -->
+    <p>
+      Estaremos criando uma tabela bem mais complexa, com alguns atributos a
+      mais e uma acessibilidade a mais para tabelas complexas. Faremos uma
+      tabela que contém 2 lojas, onde estaremos vendo quantos produtos foram
+      vendidos e produzidos e agruparemos por nome dos produtos.
+    </p>
+    <table>
+      <colgroup>
+        <!-- cada col referencia uma coluna -->
+        <!-- para preencher mais do que um espaco usamos o span -->
+        <col />
+        <col span="2" style="background-color: red" />
+        <col span="2" style="background: blue" />
+      </colgroup>
+      <!-- titulo da table -->
+      <caption>
+        Vendidos x Produzidos por loja
+      </caption>
+      <!-- Table head element, serve para separar e destacar o conteudo da sua tabela -->
+      <!-- div de uma table -->
+      <thead>
+        <!-- table row -->
+        <tr>
+          <!-- table head -->
+          <!-- organiza o espaço que vai ocupar -->
+          <th rowspan="2"></th>
+          <!-- scope ajuda a entender que o th stem haver com o colgroup -->
+          <th colspan="2" scope="colgroup">Afonsoo</th>
+          <th colspan="2" scope="colgroup">Pereira</th>
+        </tr>
+        <tr>
+          <!-- scope ajuda a entender que o th é uma coluna -->
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+          <th scope="col">Produzidos</th>
+          <th scope="col">Vendidos</th>
+        </tr>
+      </thead>
+      <!-- Conteudo da table -->
+      <tbody>
+        <tr>
+          <th scope="row">vasoura</th>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <th scope="row">Farinha</th>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
