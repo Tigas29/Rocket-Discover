@@ -568,3 +568,237 @@ Podemos colocar links, títulos para pagina, favicon, e linkar css e outras apis
 
 `<meta property="og:image" content="https://cdn-images-1.medium.com/max/92/1*TkXVfLTwsHdwpUEjGzdi9w@2x.jpeg">` cria um card especial para compartilhamentos do site dentro do facebook
 `<meta name="twitter:title" content="Rocketseat">` cria um card especial para compartilhamentos do site dentro do twwiter.
+
+`<link rel="icon" href="/icons/icon-48x48.png?v=cfca599cb367ccaf7377d56ddc7542f5"/>` serve para inserirmos esse ícone
+
+---
+
+## SEO
+
+> Search engine optimization = ajuda no motores de busca para escalar o site
+
+`<meta name="author" content="Mayk Brito">` para descrever o autor
+`<meta name="description" content="Um website para iniciantes em programação">` descrição do site na pesquisa do google
+`<meta name="robots" content="index, follow">` Defirnir o que o google faça, nesse caso, seguir link que tem na pagina e indexar a pagina na pagina de pesquisa.
+
+## Meta Social
+
+> personalizados se quisermos colocar umconteudo especial se compartilharmos em alguma rede social.
+
+`<meta property="og:image" content="https://cdn-images-1.medium.com/max/92/1*TkXVfLTwsHdwpUEjGzdi9w@2x.jpeg">` cria um card especial para compartilhamentos do site dentro do facebook
+`<meta name="twitter:title" content="Rocketseat">` cria um card especial para compartilhamentos do site dentro do twwiter.
+
+---
+
+# Vídeos
+
+**Pra usar vídeos precisamos usar a tag <video>**
+
+[https://developer.mozilla.org/en-US/docs/Web/Media/Formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats)
+
+```html
+<video src="http://www.youtube.com/embed/" controls>
+  <!-- Src=é onde vamos pedir para o html buscar o video
+      control= serve para exibir o controles de palyer... -->
+</video>
+```
+
+> Caso não funcione
+
+usamos a tag `<source>` , é apenas outra maneira de inserir videos para que navegadores que não aceitam a tag `<video>` reproduzirem mesmo assim.
+
+```html
+<source *src*="http://www.youtube.com/embed" *type*="video/mp4" />
+```
+
+> Podemos estilizar o frame
+
+Algumas propriedades são:
+
+```html
+<video
+  src="http://www.youtube.com/embed/"
+  width="100"
+  height="200"
+  autoplay
+  preload="auto"
+  isso
+  faz
+  com
+  quie
+  ele
+  começe
+  a
+  pre
+  carregar
+  preload="metadada"
+  preload
+  do
+  basico
+  preload="none"
+  so
+  carrega
+  dps
+  de
+  dar
+  o
+  play
+  loop
+  muted
+  poster="./imagem tipo o banner"
+  controls
+></video>
+```
+
+---
+
+# Audio
+
+`<audio>`
+
+- Mesmo esquema que o video
+- não funciona sem o controls
+- usamos a tag source para fazer a busca
+
+---
+
+# Iframe
+
+`<iframe>`
+
+[https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/iframe](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/iframe)
+
+- Um elemento que traz um conteúdo de fora (video, audio…)
+
+> Esse exemplo vem como um iframe do youtube.
+
+```html
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/yzInC0lHIMM"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+>
+</iframe>
+```
+
+---
+
+# Images
+
+`<img>`
+
+- Usamos src para apontar onde está a imagem
+- alt é alternativa caso não retorne uma imagem
+- titlte é o título, usado para acessibilidade e SEO
+- podemos usar atributos como width, heigth
+- A imagem pode ser um link tbm
+
+```html
+<img
+  src="https://source.unsplash.com/random"
+  width="1000"
+  height="100"
+  alt="random image"
+  tittle="Image randomica"
+/>
+
+<a href="http://www.youtube.com/embed/">
+  <img
+    src="https://source.unsplash.com/random"
+    width="1000"
+    height="100"
+    alt="random image"
+    tittle="Image randomica"
+  />
+</a>
+```
+
+---
+
+# Background-image
+
+é uma tag `<background-image>`
+
+---
+
+# Figures
+
+São titulos visiveis, talvez para dar crédito ao criador.
+
+> **FORMA NÃO SEMNÂNTICA**
+
+```html
+<div class="figure">
+  <a href="http://www.youtube.com/embed/">
+    <img
+      src="https://source.unsplash.com/random"
+      width="1000"
+      height="100"
+      alt="random image"
+      tittle="Image randomica"
+    />
+  </a>
+
+  |
+  <p>Issso seria o titulo</p>
+</div>
+```
+
+> **FORMA SEMÂNTICA**
+
+```html
+<a href="http://www.youtube.com/embed/">
+  <figure>
+    <img
+      src="https://source.unsplash.com/random"
+      width="1000"
+      height="100"
+      alt="random image"
+      tittle="Image randomica"
+    />
+
+    |
+    <figcaption>Issso seria o titulo</figcaption>
+  </figure>
+</a>
+```
+
+---
+
+# SVG
+
+- Uma marcação html com foco em fazer imagem.
+- Possuímos elementos para gerar formas
+- pode ser inserido dentro do html
+- Pode ser inserido de foram separada , em um arquivo como imagem mas com a finalidade .svg
+
+## Imagem rasterized = Imagem por meio de pixels
+
+## Imagem vetorizada = Imagem feito por algoritmo(texto)
+
+**Vantagens de uma imagem assim são:**
+
+- Mais leve
+- Mais detalhosa
+- Acessibilidade em SEO
+- Pode ser editada pelo css
+
+## Desvantagens de uma imagem são:
+
+- Pode ser complicado de trabalhar
+- Em navegadores antigos podem não suportar
+- Quanto mais complexa a imagem(uma imagem de uma pessoa) mais difícil de se usar
+
+---
+
+```html
+<svg width="200" height="200">
+  <circle cx="50" cy="50" é o eixo r="80" stroke="red" é a linha fill="blue" />
+</svg>
+
+sairia um circulo daqui.
+```

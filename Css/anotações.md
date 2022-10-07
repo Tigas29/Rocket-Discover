@@ -895,3 +895,4 @@ Podemos aplicar múltiplos backgrounds em um mesmo elemento, podendo ter cor só
 </aside>
 
 `background:linear-gradient(yellow,green) border-box, red fixed;`
+
