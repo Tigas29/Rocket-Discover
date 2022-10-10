@@ -386,7 +386,7 @@ li {
   - `hsl()` calcula a cor rgb de acordo com a saturação, matiz e luminosidade prospota em porcentagem
   - `url()` importa imagem ou algo que alguém ja fez
   - `calc()` exemplo: (height:calc(50% + 20px) **lembrando que o calc precisa sempre de uma referencia de tamanho** )
-  Dentro dos parêntesis são passados argumentos
+    Dentro dos parêntesis são passados argumentos
   ***
   # Strings e identificadores
   identificadores é basicamente usar nomes para um valor(red,black,white…)
@@ -896,3 +896,324 @@ Podemos aplicar múltiplos backgrounds em um mesmo elemento, podendo ter cor só
 
 `background:linear-gradient(yellow,green) border-box, red fixed;`
 
+# Layouts
+
+# Positions
+
+É uma propiedade do comportamento de uma div
+
+- Name: position
+- Value: static | relative | absolute | fixed
+
+---
+
+## Static
+
+esse é o padrão das div, onde vai fazer com que seja seguido o fluxo padrão da página (um embaixo do outrto)
+
+---
+
+## Relative
+
+Quando o position é **relative**
+os elementos são deslocados do seu posicionamento normal, mas sem afetar o posicionamento de outros elementos da página.
+
+- junto com o relativo, vem juto propiedades para mexer no elemento (top, left, bottom e right)
+
+HTML
+
+```html
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+```
+
+CSS
+
+```css
+.box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.box1 {
+  background-color: red;
+  position: relative;
+  left: 100px;
+  top: 80px;
+}
+
+.box2 {
+  background-color: green;
+}
+
+.box3 {
+  background-color: blue;
+}
+```
+
+---
+
+## Absolute
+
+Como se eliminado o espaço reservado para esse elemento, criando uma nova camada para esse elemento
+
+- também recebe as 4 propiedades para alterar sua posição (top, left, bottom e right)
+
+HTML
+
+```html
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+```
+
+CSS
+
+```css
+.box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.box1 {
+  background-color: red;
+  position: absolute;
+  left: 100px;
+  top: 80px;
+}
+
+.box2 {
+  background-color: green;
+}
+
+.box3 {
+  background-color: blue;
+}
+```
+
+---
+
+## Fixed
+
+- cria um elemento flutuante
+- fica exatamente fixo a página (ao scrolar ele vai estar no mesmo lugar )
+
+---
+
+## Element stacking
+
+- isso diz qual o index desse elemento (quanto maior o numero mais a camada e quanto menor o numero menor a camada)
+
+É o empilhamento de elementos. Podemos usar o z-index para determinar a ordem da posição do elemento. Quanto maior o z-index, mais "acima" vai aparecer o elemento.
+
+HTML
+
+```html
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+```
+
+CSS
+
+```css
+.box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.box1 {
+  background-color: red;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 3;
+}
+
+.box2 {
+  background-color: green;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.box3 {
+  background-color: blue;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+```
+
+---
+
+# Flex
+
+- Nos permite posicionar os elementos dentro da caixa
+- Controle em uma dimensão (horizontal ou vertical)
+- Alinhamento, direcionamento, ordenar e tamanhos
+
+> Só precisamos colocar um display:flex na caixa “pai”.
+
+```css
+div.parent {
+  display: flex;
+}
+```
+
+### Flex-direction
+
+- Qual a direção do flex: horizontal ou vertical
+- row | column
+
+### Alinhamento
+
+- justify-content
+- align-items
+
+HTML
+
+```
+<div class="container">
+  <div class="box blue"></div>
+  <div class="box red"></div>
+  <div class="box green"></div>
+</div>
+```
+
+CSS
+
+```
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+```
+
+---
+
+# Grid
+
+- Faz posicionamentos do elementos
+- Posiciona na horizontal e vertical, diferente do flex
+- Pode ser flexivel ou fixo
+- Ele cria espaços para os filhos dele habitarem
+
+```html
+<body>
+  <header>Topo</header>
+  <main>Conteudo</main>
+  <aside>Conteudo de anuncio</aside>
+  <footer>Footer</footer>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-areas:
+        "header header " "main aside"
+        "footer footer";
+
+      grid-template-rows: 30px 1fr 40px;
+      grid-template-columns: 80vw 1fr;
+    }
+    header {
+      grid-area: header;
+      background-color: red;
+    }
+    main {
+      grid-area: main;
+      background-color: green;
+    }
+    aside {
+      grid-area: aside;
+      background-color: blue;
+    }
+    footer {
+      grid-area: footer;
+      background-color: yellow;
+    }
+  </style>
+</body>
+```
+
+---
+
+# Grid ou flex
+
+- podemos usar os dois no mesmo código mas não podemos usar eles juntos;
+
+HTML
+
+```html
+<body>
+  <header>
+    <div>Logo</div>
+    <div>Menu</div>
+  </header>
+  <main>Conteúdo</main>
+  <aside>Infos adicionais</aside>
+  <footer>Rodapé</footer>
+</body>
+```
+
+CSS
+
+```css
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-rows: 30px 1fr 40px;
+  grid-template-columns: 1fr 80px;
+}
+
+header {
+  grid-area: header;
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+main {
+  grid-area: main;
+  background-color: red;
+}
+
+aside {
+  grid-area: aside;
+  background-color: blue;
+}
+
+footer {
+  grid-area: footer;
+  background-color: gray;
+}
+```

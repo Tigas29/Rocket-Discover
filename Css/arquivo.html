@@ -1,4 +1,4 @@
-{<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,33 +7,38 @@
     <title>Aquirvo para puxar o css</title>
   </head>
   <body>
-    <h1 class="tittle">Esse texto</h1>
-    <div>div</div>
-    <section>section</section>
-
-    <svg width="200" height="200">
-      <circle
-        cx="50"
-        cy="50"
-        é
-        o
-        eixo
-        r="80"
-        stroke="red"
-        é
-        a
-        linha
-        fill="blue"
-      />
-    </svg>
+    <header>Topo</header>
+    <main>Conteudo</main>
+    <aside>Conteudo de anuncio</aside>
+    <footer>Footer</footer>
     <style>
-      .tittle {
-        width: 100px;
-        border: 1px solid red;
-        /* o total vai ser 102 e não 100 */
-        background: linear-gradient(yellow, green) border-box, red fixed;
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-areas:
+          "header header " "main aside"
+          "footer footer";
+
+        grid-template-rows: 30px 1fr 40px;
+        grid-template-columns: 80vw 1fr;
+      }
+      header {
+        grid-area: header;
+        background-color: red;
+      }
+      main {
+        grid-area: main;
+        background-color: green;
+      }
+      aside {
+        grid-area: aside;
+        background-color: blue;
+      }
+      footer {
+        grid-area: footer;
+        background-color: yellow;
       }
     </style>
   </body>
 </html>
-}
