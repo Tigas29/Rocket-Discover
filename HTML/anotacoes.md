@@ -802,3 +802,125 @@ São titulos visiveis, talvez para dar crédito ao criador.
 
 sairia um circulo daqui.
 ```
+
+# Forms
+
+`<form>`
+
+é um container parecido com <Section>
+
+Atributos:
+
+- action
+
+- method
+  **get** - Levar dados do forms para algum local
+  **post** - Ficam escondido na url e são feitos para criar algo
+
+<aside>
+🔥 Padrão é sempre o action vai retornar para  mesma página e o method vim como get
+
+</aside>
+
+> Para que serve?
+
+- São formas de capturar formas de entradas do usuário.
+- Capturar dados de entrada (input)
+- Interação
+- Controle
+
+---
+
+> Pré Requisitos
+
+- Básico
+
+---
+
+> Dominar
+
+- Estilização
+- Controle customizados
+- JavaScript
+
+---
+
+# Fieldset Legend
+
+- <fieldse>
+    - agrupamento de canpos
+    - nesmo propósito
+    - semántico
+    - acessibilidade
+    - Atributos especiais
+- disabled
+  - desabilita todos os elementos internos
+  - não serão enviados ao submeter o formulário
+- form
+  - O id de um formulário do qual esse fieldset pertence
+  - não precisa estar dentro do formulário name
+
+```css
+<form id="contato" action="">
+<button>Enviar</button>
+</form>
+
+<fieldset form="contato" names"inputs-contact">
+<lelegend>Contato</legend>
+</fieldset>
+```
+
+---
+
+# Label
+
+`<label>`
+
+> Serve para associar uma ou mais tag de entrada
+
+É possivel clicar para mudar o foco da entrada de dados (fica piscando quando clica no input)
+
+**Atributo for**
+
+- O for serve para conexão um label no input que está fora do label
+- Só funcionam para o seguintes inputs:
+
+**_BUTTON, INPUT(Not Hidden), METER, OUTPUT, PROGRESS, SELECT, TEXTAREA_**
+
+---
+
+# Button
+
+<aside>
+💡 Representa um botão e é usado para enviar dados
+
+</aside>
+
+> Types
+
+- Submit
+- reset
+
+```
+<form action="">
+        <input type="text" value="" />
+        <button type="reset">Resetar</button>
+      </form>
+```
+
+- button
+- autofocus
+- disabled
+- name
+- value
+- form
+
+---
+
+# Detalist
+
+São um lista com valores de sugestão
+
+Não são obrigátorios
+
+O usuáro pode colocar outras opções
