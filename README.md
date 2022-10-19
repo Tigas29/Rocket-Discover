@@ -10,6 +10,17 @@
 <p>
 <a href="https://github.com/Tigas29/Rocket-Discover/blob/main/Css/anota%C3%A7%C3%B5es.md"> Conteudo de css </a>
 </p>
+
+<p>
+
 <a href="https://github.com/Tigas29/Rocket-Discover/blob/main/HTML/anotacoes.md"> Conteudo de Html </a>
+
+</p>
+
+<p>
+
+<a href="https://github.com/Tigas29/Rocket-Discover/blob/main/JS/anotacoes.md"> Conteudo de Js </a>
+
+</p>
 
 </aside>
