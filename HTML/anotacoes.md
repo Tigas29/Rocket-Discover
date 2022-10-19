@@ -924,3 +924,222 @@ São um lista com valores de sugestão
 Não são obrigátorios
 
 O usuáro pode colocar outras opções
+
+# Input
+
+- Um dos mais usados em formularios
+- Aceita diversos tipos de dados (texto, data, color,range…)
+- Tem muitas combinações e pode ser usada para ifinitas coisas
+
+## Atributos comuns
+
+- Primeiro temos o **`<type>`** que é onde faz a mágica de ter todo o mar de opções
+- `<autocomplete>` é exatamento o que diz, ele pega o que voce escreve com frequencia para dar como sugestão.
+- `<autofocus>` é um boolean que faz com que ao carregar a pagina, ele vira foco para ser escrito algo.
+  obs: é sempre um por página.
+- `<disable>` é um atributo que desabilita a entrada de dados.
+  obs: se tive um **<value>** ele ficará lá e não será capaz de alterar.
+- `<readonly>` é igual o disable, ele fica apena para leitura.
+  a única diferença é que não fica opaco que nem o disable
+- `<form>` serve para linkar para um form.
+
+```
+<label>Formulario topzera</label>
+    <form id="meuform">
+
+      blablabla
+    </form>
+    <input type="text" form="meuform">
+```
+
+- `<name>` é o nome para o form ou input.
+- `<required>` tentar enviar o formulário ele é obrigátorio.
+  obs? se não colocar ele vai pedir para inserir antes de enviar o formulário
+- <placeholder> é o textinho que fica dentro do input
+
+---
+
+# Password
+
+## Atributos
+
+- **minlength**: minimo de caracteres que precisa ter para ser aceito.
+- **maxlength**: o máximo de caracteres que pode ser colocado.
+- **size**: é o tamanho de campo do input(isso não influência o tamanho suportado de caracteres.)
+- **pattern:** É o que precisa ser colocado para senha ser aceita (letra maiuscula, numero, caracteres especiais.)
+  **exemplo:**
+  `<input *tpye*="password" *pattern*="[0-1a-fA-F{4,8}]">`
+  OBS: para ajudar o usuário é possível colocar um tittle especificando o que é obrigátorio nessa senha.
+- **placeholder**
+- **readonly**
+- **required**
+- **inputmode:** é o tipo de teclado que vai ser aberto no smartphone.
+  exemplo :`<input *tpye*="password" *inputmode*="numeric">`
+- **autocomplete**
+
+---
+
+# Email
+
+## Atributos
+
+- **placeholder**
+- **readonly**
+- **disable: posso deixar um value como padrão a ser visto**
+- **required**
+- **multiple : permite coloca mais de um email separado por vírgulas.**
+- **minlength**: minimo de caracteres que precisa ter para ser aceito.
+- **maxlength**: o máximo de caracteres que pode ser colocado.
+- **size**: é o tamanho de campo do input(isso não influência o tamanho suportado de caracteres.)
+- **pattern:** É o que precisa ser colocado para senha ser aceita (letra maiuscula, numero, caracteres especiais.)
+  **exemplo:**
+  `<input *type*="email" *pattern*=".+@gmail\.com|/.br" *tittle*="somente email da google serão aceitos.">`
+- **list** : aceita sugestões de emails.
+
+---
+
+# URL
+
+## Atributos
+
+- **placeholder**
+- **readonly**
+- **disable: posso deixar um value como padrão a ser visto**
+- **required**
+- **minlength**: minimo de caracteres que precisa ter para ser aceito.
+- **maxlength**: o máximo de caracteres que pode ser colocado.
+- **size**: é o tamanho de campo do input(isso não influência o tamanho suportado de caracteres.)
+- **pattern:** É o que precisa ser colocado para senha ser aceita (letra maiuscula, numero, caracteres especiais.)
+  **exemplo:**
+  `<input *type*="url" *pattern*="\.com|/.br" *tittle*="somente url com .com serão aceitos.">`
+- **list** : aceita sugestões de emails.
+- **speelcheck** : se vai ter ou não verificação ortográfica.
+
+---
+
+# FILE
+
+<aside>
+💡 para usar o input tipo file o formulário oprecisa ter o “method=”post ” “ e enctype=”multipart/form-data”
+
+</aside>
+
+## Atributos
+
+- **value :** contem o arquivo que vai ser enviado
+- **accept :** descreve que tipo de arquivos vão ser aceitos.
+- **files :** a lista de arquivos
+  `<input *type*="file" *accept*=".pdf">`
+  `<input *type*="file" *accept*=".video/*">`
+- **multiple** : aceita varios arquivos (atributo boolean)
+
+---
+
+# Color
+
+color picker
+
+## Atributos
+
+- **value** : padrão rgb, pode deixar uma cor padrão e ser for inválido o padrão vai ser a cor preta.
+- list: pode ser linkada a um datalist para servir de sugestão para o usuário final.
+
+---
+
+# Checkbox
+
+## Atributos
+
+- checked : deixa checado
+- name : quando tem o mesmo nome o check box ficam juntos.
+- globais:
+  se for não checado ele vai ir como nada, ele simplesmente não vai.
+-
+
+---
+
+# Hidden
+
+é um campo escondido;
+
+---
+
+# Radio
+
+uma unica opção dentre um monte de opções
+
+## Atributos
+
+- checked : deixa checado
+- value: valor que o campo contém.
+
+---
+
+# TextArea
+
+feito para texto com mais de uma linha
+
+> Um fato interessante é que se no código ele tiver um espaço de mais de uma linha, o navegado vai ler isso e deixar o textarea com mais de uma linha.
+
+## Atributos
+
+- **id** serve para ligar o textarea num label
+- **name** serve para quando enviar o portifolio, receber em algum lugar com o name dado.
+- **row** é quantas linhas terá
+- **cols** é quantas columns terá
+- **minlength**: minimo de caracteres que precisa ter para ser aceito.
+- **maxlength**: o máximo de caracteres que pode ser colocado.
+- ****\*\*****wrap****\*\***** serve para não começar a compactar o texto quebrando linhas. (ele passa dos limites da area.)
+  **soft ,hard**
+- Atributos comuns (disabled, readonly, form, required, autofocus, autocomplete…)
+-
+
+---
+
+# Select e Option
+
+Controle que fornece menu de opções
+
+Dentro dele temos o <option> ficando assim a escrita.
+
+```html
+<label for="phoneselect"></label>
+<select name="phonemodel" id="phoneselect">
+  <option value="Selecione o modelo de celular"></option>
+  <option value="Asus">Asus</option>
+  <option value="Apple">Apple</option>
+  <option value="Samnsung">Samsung</option>
+</select>
+```
+
+para ele ter mais do que uma opção válida é só colocar o atributo **mutiple** no `<select>`
+
+> o name guarda o value escolhido para levar para o back end
+
+**Size: segura o tamanho dos options.**
+
+---
+
+# Optgroup
+
+agrupamentos dos options dentro do select.
+
+<aside>
+💡 Ele agrupa e formata as opções.
+
+</aside>
+
+Para ficar formatado da melhor forma, é viável utilizar o label dentro do optgroup.
+
+---
+
+# Search
+
+É um campo de busca
+
+## Atributos
+
+- list / <datalist> é as opções de busca a serem feitas
+- pattern define o padrão aceitos no campo de busca para dar match na busca.
+- aria-label serve como opção quando não temos o **label}
+  obs: ele não aparece no browser mas é lido por ele.**
