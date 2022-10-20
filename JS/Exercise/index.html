@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olhos seguindo o mouse </title>
+    <Script src="./script.js"></Script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            position: relative;
+
+        }
+
+
+        .configImg {
+            width: 580px;
+        }
+
+        #eyes,
+        #eyes img {
+            position: absolute;
+        }
+    </style>
+
+    <main>
+        <img class="configImg" id="anchor" src="./screen-7.webp">
+        <div id="eyes">
+            <img class="eye" src="./eyes.png" style=" width: 10px;       bottom: 11px;
+    right: 109px;">
+            <img class="eye" src="./eyes.png" style=" width: 10px;   bottom: 20px;
+    left: -82px;">
+            <img class="eye" src="./eyes.png" style=" width: 10px;   top: 10px;
+    left: 115px;">
+            <img class="eye" src="./eyes.png" style=" width: 10px;       top: 10px;
+    right: -88px;">
+        </div>
+    </main>
+</body>
+
+</html>
