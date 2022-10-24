@@ -81,9 +81,7 @@ Para entender variáveis podemos pensar nelas como nomes simbólicos para algum 
 - O tipo existe a partir do momento que um valor é atribuido.
 - Para ver qual o tipo de variável é a declaração, usamos o `typeof`
 - Podemos mudar o tipo de variavel, isso faz o js ser dinâmico.
--
-
----
+- ***
 
 # Scope e var, let e const
 
@@ -114,3 +112,34 @@ o js faz com que o código que for declarado em baixo de uma chamada, seja jogad
 # Nomeando Varáveis.
 
 Para nomearmos variáveis corretamente e de um jeito inteligente, precisamos saber de algumas coisas, como: JavaScript é case-sensitive (sensível à letras maiúsculas e minúsculas) e aceita a cadeia de caracteres Unicode, podendo receber acentuações. Em um nome de variável em JS você pode: Iniciar com caracteres especiais, iniciar com letras e colocar acentos, lembrando sempre que letras maiúsculas e minúsculas fazem a diferença. Em contraste, você não pode: Iniciar com números e colocar espaços vazios. Idealmente você deve colocar nomes significativos, que fazem sentido na aplicação, explicando o que a variável é, usando camel case, onde a primeira palavra de uma frase é toda minúscula, e as subsequentes não se separam por espaço e tem a primeira letra maiúscula, por exemplo: oNomeDessaVariável, e usar nomes em inglês.
+
+# Declaration assignment var
+
+Para declarar uma variável podemos usar var, let e const, e para atribuírmos valores à essa variável utilizamos o caractere =, e para vermos o tipo dessa variável podemos utilizar a função `console.log(typeof variavel)`
+.
+
+---
+
+# **Concatenando e interpolando variáveis**
+
+É possível concatenar strings com o operador +, por exemplo: `console.log('o ' + name + ' tem ' + age + ' anos.')`
+ desta maneira as variáveis serão convertidas em texto e o que será mostrado será um texto com o nome e a idade que foram estabelecidas no código. Uma outra maneira de escrever um texto com variáveis é por meio da interpolação com template literals, usando crase para o texto e ${} para denotar uma variável, por exemplo `console.log(`
+O ${name} tem ${age} anos.`)`
+ o resultado deste comando será o mesmo texto do anterior.
+
+---
+
+# Objects
+
+Para criarmos um objeto utilizamos as chaves envolvendo as propriedades, que são atribuídas com dois pontos, por exemplo: `const person = { name: 'John', age: 20 }`
+, para acessar essas propriedades usamos o ".", por exemplo: `console.log(person.name)`
+.
+
+---
+
+# Arrays
+
+Para criarmos um vetor utilizamos [ ] envolvendo os valores, por exemplo: `const animals = [ "Lion", "Monkey" ]`
+, para acessar esses valores usamos a posição do valor no vetor, começando por 0, por exemplo: `console.log(animals[0])`
+. Para descobrirmos o número de posições de um vetor qualquer, podemos utilizar a propriedade length, por exemplo: `animals.length`
+.
