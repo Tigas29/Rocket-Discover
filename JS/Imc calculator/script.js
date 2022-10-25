@@ -25,7 +25,7 @@ function imc() {
       validation = "obesidade classe 3";
     }
 
-    result.textContent = `${name}, seu imc é ${soma}. você está 
+    result.textContent = `${name}, your imc is ${soma}. você está 
       ${validation}`;
   } else {
     result.textContent = "please, fill all the contents with valid values";
