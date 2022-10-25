@@ -18,3 +18,10 @@ img {
   max-width: 500px;
   max-height: 500px;
 }
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: "apple";
+}
