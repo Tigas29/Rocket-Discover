@@ -14,24 +14,19 @@
     <form name="Contato" method="get">
         <fieldset style="width:20px">
 
-            <legend>Contato</legend>
-            <label for="name">Nome</label>
+            <legend>Contact</legend>
+            <label for="name">Name</label>
             <br>
 
-            <input type="text" name="Nome" id="name">
+            <input type="text" pattern="[a-fA-F]" name="Nome" id="name">
 
             <br>
 
             <label for="mail">Email</label>
             <br>
 
-            <input type="email" name="email" id="mail">
+            <input type="email" pattern=".+@gmail\.com|/.br" name="email" id="mail">
 
-            <br>
-
-            <label for="message">Mensagem</label>
-            <br>
-            <input type="textarea" name="Mensagem" id="message">
             <br><br>
             <button type="submit">Enviar</button>
         </fieldset>

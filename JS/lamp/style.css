@@ -25,3 +25,17 @@ p {
   font-size: 20px;
   font-family: "apple";
 }
+
+button {
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: gray;
+  color: white;
+  transition: 0.2s linear;
+}

@@ -143,3 +143,233 @@ Para criarmos um vetor utilizamos [ ] envolvendo os valores, por exemplo: `cons
 , para acessar esses valores usamos a posição do valor no vetor, começando por 0, por exemplo: `console.log(animals[0])`
 . Para descobrirmos o número de posições de um vetor qualquer, podemos utilizar a propriedade length, por exemplo: `animals.length`
 .
+
+---
+
+# Function
+
+Funções são tipos de dados estruturais, que são declarados dessa forma: `function nomeFunção() { código à cer executado }`
+ e para executar a função, usa-se: `nomeFunção()`
+. Uma função é importante para o agrupamento e reutilização de código.
+
+Um bloco de código esperando para ser chamado e executado em algum momento.
+
+---
+
+# Argumentos e parametros
+
+- podemos colocar funções dentro de variaveis.
+- São chamadas de function anonymous ou function expression.
+- parameter é o que vai dfentro do () sendo possivel utilizar dentro do bloco de código.
+
+---
+
+# Return in functions
+
+Para passar valores de dentro da função para o resto do código, usa-se a palavra reservada return seguida do valor à ser retornado, parando assim a execução da função e mandando o valor para onde a função foi chamada.
+
+```jsx
+// function Sum(A, B) {
+//   console.log(A + B);
+// }
+function Sum(A, B) {
+  let calculate = A + B;
+  return calculate;
+}
+
+let number1 = 39;
+let number2 = 38;
+Sum(number1, number2);
+
+console.log(`O numer 1 é ${number1} `);
+console.log(`O numer 2 é ${number2} `);
+console.log(`a soma é ${Sum(number1, number2)} `);
+
+// por n ter um return, ele nao vai retornar nenhum valor e sim vai retornar um console log, pois é o que o codigo tem para ser exibido, vamos ver uma segunda opção para que possamos usar um valor ao inves de undefined
+```
+
+---
+
+# Function scope
+
+Parâmetros, mesmo se tiverem o mesmo nome que alguma outra variável do seu código, são apenas modificados e persistem no escopo da função.
+
+---
+
+# Function Hoisting
+
+//function hoisting
+
+sayMyName();
+
+function sayMyName() {
+
+console.log("Tiago");
+
+}
+
+// isss vai ocorrer um hoisting
+
+//poremmm se a function estiver numa const e var  isso não vai aconntecer
+
+---
+
+# ARROW FUNCTION
+
+Uma forma mais morderna de colocar uma functiona uma variável.
+
+let teste = () ⇒{console.log(”oi”)}
+
+---
+
+# Function construtctor
+
+Funções construtoras são utilizadas para criar novos objetos e geralmente tem a sua primeira letra maiúscula, todos com as mesmas características que são criadas na função, usando a palavra reservada this para se referir ao objeto sendo criado, por exemplo:
+
+```jsx
+function Person(name) {
+  this.name = name;
+}
+
+const Jhon = new Person("Tiago");
+console.log(Jhon);
+
+// o que ta fora vai ser referenciado cmomo this.--- dentro da function
+```
+
+---
+
+# Prototype
+
+O JavaScript possui uma característica chamada Prototype, que é uma série de funcionalidades e atributos que já existem nativamente em diversos tipos de dados, que são lidados como objetos.
+
+<aside>
+💡 É isso que faz maniplarmos os dados.
+
+</aside>
+
+```jsx
+// é basicamente usar prototype que podemos acessar no js
+
+console.log("Mayky".length);
+
+//length seria um prototype que vai contar quantas letras tem dentro da string.
+console.log("Mayky".__proto__);
+
+// proto vai herdar todos os dados possiveis dessa string.
+
+console.log((1.0).__proto__);
+// dentro do --proto desse nyumero temos outro proto que é o dados mais primitio que temos
+```
+
+# Type conversion coersion
+
+> Ambas alterão um tipo de dado para o outro
+
+- Type conversion voce que altera implicitamente
+- Type Corseion é o js que faz isso.
+
+---
+
+# String em números
+
+Uma forma de manipular uma string para numero é usando o number.
+
+Quando temos um numero , temos uma coloração diferente no console do navegador.
+
+```
+let string = "123";
+console.log(Number(string));
+let number = "123";
+console.log(String(string));
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7c8908e-fcd6-4df7-9385-e2630ada5e16/Untitled.png)
+
+---
+
+# Contando caracteres e digitos
+
+```jsx
+let word = "tiago alemeida santos";
+
+console.log(tiago.length);
+
+let number = 123;
+
+console.log(number.length); // isso n funciona   mmass
+
+console.log(string(number).length);
+```
+
+---
+
+# Casas decimais
+
+```jsx
+let number2 = 1231.23123123123123213;
+
+console.log(number2.toFixed(2));
+
+// vai aparecer dois numeros apos o ponto
+
+// trocar ponto por virgula
+
+console.log(number2.toFixed(2).replace(".", ","));
+
+// isso daqui retorna uma string
+```
+
+---
+
+# Upper case and lower case
+
+```jsx
+let strings = "oi";
+
+console.log(strings.toLowerCase());
+console.log(strings.toUpperCase());
+```
+
+---
+
+# **Separando strings**
+
+element.split transforma o texto todo num array, podemos colocar argumentos dentro do split para que o texto seja separado, vamo ver um exemplo onde eu queor que o texto seja separado dentro desse array a cada vez que eu dou um espaço.
+
+```jsx
+let phrase = "Hoje o dia está  lindo , não é mesmo  ? ";
+
+let array = phrase.split(" ");
+```
+
+join junta um array com um argumento dado, no exemplo abaixo, vamos juntar usando o “\_”
+
+```jsx
+let phrase = "Hoje o dia está  lindo , não é mesmo ? ";
+
+let array = phrase.split(" ");
+
+console.log(array);
+
+let newPrhase = array.join("_");
+console.log(newPrhase);
+```
+
+---
+
+# Checking se tem uma palavra
+
+Usamo o .include(”argumentos”) para verificar se tem uma palavra em especifico no que queremos veri
+
+```jsx
+let justAPhrase = "Hoje o dia está  lindo , não é mesmo ? ";
+
+let result = justAPhrase.includes("dia");
+
+console.log(result);
+// true
+// false
+
+// retorna no final se é true ou false
+```
