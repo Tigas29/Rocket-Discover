@@ -373,3 +373,399 @@ console.log(result);
 
 // retorna no final se é true ou false
 ```
+
+---
+
+# Array com constructor
+
+```jsx
+let arrays = new Array("oiiiiiiii", "oi");
+
+console.log(arrays);
+
+// cada elemento vai se tornar uma posiçao no meu array
+```
+
+---
+
+# Elementos do array
+
+console.log(["quero comer um pouco", "café?", "sla"].length);
+
+---
+
+# **Strings para arrays**
+
+```jsx
+let wordsss = "Tiago santos";
+
+console.log(Array.from(wordsss));
+```
+
+---
+
+# **Manipulando arrays**
+
+```jsx
+let marcas = ["samsaung", "applesan", "corola amarelo", "outra coisa aqui"];
+
+// para acionar no ultimo elemento
+marcas.push("usei o push para colocar isso aqui");
+
+// pra acionar no primeiro elemento
+marcas.unshift("usei o unshift para colocar isso aqui ");
+
+// remover do final
+marcas.pop();
+
+//remover do começo
+marcas.shift();
+
+// pegar somente alguns elementos tem dois argumentos
+// o primeiro é para saber onde quer começar
+// o segundo é para saber até onde ele vai
+console.log(marcas.slice(0, 2));
+
+//remover 1 ou mais items em qualquer posição do array
+// qual o index e o segundo é quantos elementos quer tirar
+// a diferença pe que esse modifica o array
+console.log(marcas.splice(2, 3));
+
+// achar uma posição
+let position = marcas.indexOf("css");
+
+console.log(position);
+
+console.log(marcas);
+```
+
+---
+
+# Expressões e operadores
+
+- Toda expressão pode terminar com ponto e vírgula
+  - São poucos casos que causaria erros se tiver a ausencia do ponto e virgula
+  - Exemplo:
+  ```
+  // // Expressao que pode dar erro pela falta de ponto e virgula
+
+  // let number = 1
+
+  //     (function () {
+  //   console.log("oi");
+  // });
+
+  // ele entender que a variavel é a funçao tbm
+
+  ```
+- Operadors podem ser binario ou unario
+
+```
+// operador binerio pode ser binario(dois valores para que o operador esteja entre eles)
+
+// console.log(1 + 1)// o + é o operador binario
+```
+
+- temos uma expressão de ternario, que é a condicão:
+  - console.log(false ? "oi" : "nada");
+
+---
+
+# New
+
+- Left hand side expression
+- Criar um novo objeto
+
+```
+let name = new string("tiago");
+let number = new number(1);
+
+// ambos estarao em objeto
+
+// com um objeto, podemos adicionar coisas neles apos isso
+
+name.middle = "oi";
+
+// se acessarmos o name agora, vamos ter o oi e tiago juntos no mesmo objeto
+```
+
+---
+
+# Typeof Delete
+
+- Operador unário
+- saber qual é o tipo de dado na variavel
+- Exemplo:
+  - console.log(typeof person);
+- Também podemos deletar com o delete.
+- Exemplo:
+  - console.log(delete person.name)
+
+---
+
+# Operadores aritméticos
+
+Falaremos nessa aula sobre operadores aritméticos, que nos possibilitam fazer cálculos matemáticos.
+
+O operador de multiplicação é o \* (asterisco);
+
+O operador de divisão é a / (barra);
+
+O operador de soma é o + (positivo);
+
+O operador de subtração é o - (negativo).
+
+Outros operadores aritméticos incluem o resto de divisão, incremento, decremento e exponencial, com exemplos a seguir:
+
+```
+/* resto da divisão: sinal % */
+let remainder
+remainder = 11 % 9
+console.log(remainder)
+
+/* incremento: sinal ++ */
+let increment = 0
+
+console.log(++increment)
+console.log(increment)
+
+/* decremento: sinal -- */
+let decrement = 0
+decrement--
+console.log(decrement)
+
+/* exponencial: sinal ** */
+console.log(2 ** 3)
+```
+
+---
+
+# Grouping operator
+
+Vamos falar sobre um operador que agrupa expressões, os parênteses.
+
+Na matemática, temos uma noção de precedência, onde certos operadores têm de ser realizados primeiro, e não é diferente para um computador, porém, podemos utilizar os parênteses para realizar o agrupamento de alguns operadores, que moverá a precedência do cálculo.
+
+```
+let total = 2 + 3 * 5
+console.log(total)
+//com essa precedência, nosso resultado é 17.
+
+let total = (2 + 3) * 5
+console.log(total)
+// o cálculo mudou a precedência, fazendo nosso resultado tornar-se 25.
+```
+
+---
+
+# Operadores de compração igual a e diferente de
+
+```jsx
+// É a forma de dizer se é igual  a no js é com o ==
+
+let total = 10;
+
+console.log(total == 9);
+
+// vai retornar falso pois o resultado é 10
+
+// a forma de dizer que é diferente de no js é com o !=
+
+console.log(total != 10);
+// vai retornar falso pois o resultado não é difernete de 10
+```
+
+---
+
+# **Operadores de comparação estritamente igual e estritamente diferente**
+
+```jsx
+let result = 2;
+
+console.log(result === "2");
+
+// vai retorna falso pois é um dois string e não dois number
+
+console.log(result != 2);
+
+// vai retorna verdeiro pois o tipo e valor são iguais
+```
+
+---
+
+# **Operadores de comparação maior e menor (igual)**
+
+```jsx
+// para dizer menor que , maior que, maior igual ou menor igual usamos o
+
+let result = 10;
+
+console.log(result >= 10);
+console.log(result > 10);
+console.log(result <= 10);
+console.log(result < 100);
+```
+
+---
+
+# Operadores de atribuição
+
+Veremos nesta aula sobre operadores de atribuição. Quando falamos em atribuição, queremos na verdade dizer assignment, que já vimos bastante, mas podemos também realizar diferentes tipos de atribuição, usando operadores aritméticos.
+
+Exemplos:
+
+```
+// Operadores de atribuição (Assignment)
+let x
+
+// assignment normal:
+x = 1
+
+// addition assignment (adição):
+x += 2
+
+// subtraction assignment (subtração):
+x -= 1
+
+// multiplication assignment (multiplacação):
+x *= 2
+
+// division assignment (divisão):
+x /= 2
+
+// exponetiation assignment (exponenciação):
+x **= 2
+
+// remainder assignment (resto de divisão):
+x %= 2
+```
+
+---
+
+# **Operadores lógicos**
+
+são dois valores boleano que retornam falso ou verdeiro, isso depende da condição
+
+```jsx
+// let queijo = true;
+
+// // let pao = true;
+
+// // console.log(pao && queijo); // esse && significa o and, o "pao e queijo" são verdeadeiro?
+
+// let queijo = true;
+// let pao = false;
+
+// console.log(queijo || pao); // se tiver um dos dois já é verdadeiro, o || significa o "or", tem "pao ou queijo"?
+
+// console.log(!queijo);
+// // isso significa a negação, tudo que é overdadeiro vai retornar o verdeiro, e vice e verca
+```
+
+---
+
+# Operador condicional ternário]
+
+Os operadores ternários, conhecidos como operadores de condição, como o nome sugere, são dependentes de condições e podem entregar valores diferentes com base nelas.
+
+Funciona da seguinte forma;
+
+```
+condição ? valor1 : valor2
+```
+
+Exemplo de uso:
+
+```jsx
+// Café da manhã top
+let pao = false;
+let queijo = false;
+
+const niceBreakfast = pao || queijo ? "Café top" : "Café ruim";
+
+console.log(niceBreakfast);
+```
+
+```jsx
+let pernaEsquerda = true;
+let pernaDireita = false;
+
+let alejados = pernaEsquerda || pernaDireita ? "normal" : "alejado";
+
+console.log(alejados);
+```
+
+---
+
+# Operadores para string
+
+Temos também os string operators, os operadores de string, e nós até já vimos um desses antes, o comparison operator, ou ==, para os mais íntimos.
+
+Agora vamos ver sobre a concatenação, que é o retorno da união de duas strings.
+
+Seu símbolo é o de + (positivo), e seu uso é simples, algo próximo de:
+
+```
+console.log('a' + 'a')
+// nesse caso, o retorno da string seria aa.
+```
+
+---
+
+# Falsy e Truthty
+
+O falsy é quando um valor é considerado falso em contextos que onde um booleano é obrigatório (condicionais e loops), exemplo a seguir:
+
+```
+/*
+	Todos os valores abaixo seriam representados como false em um boolean.
+		false
+    0
+    -0
+    ""
+    null
+    undefined
+    NaN
+*/
+
+console.log( NaN ? 'verdadeiro' : 'falso' )
+```
+
+já o truthy é o oposto, quando um valor é considerado verdadeiro (true) em contextos onde um booleano é obrigatório (condicionais e loops), exemplo a seguir:
+
+```
+/*
+	Todos os valores abaixo seriam representados como false em um boolean.
+		true
+    {}
+    []
+    1
+    3.23
+    "0"
+    "false"
+    -1
+    Infinity
+    -Infinity
+*/
+
+console.log( Infinity ? 'verdadeiro' : 'falso' )
+```
+
+---
+
+# Precedência dos operadores
+
+```
+// De cima para baixo, do mais importante ao menos importante.
+
+* grouping                      ( )
+* negação e incremento          ! ++ --
+* multiplicação e divisão       * /
+* adição e subtração            + -
+* relacional                    < <= > >=
+* igualdade                     == != === !==
+* AND                           &&
+* OR                            ||
+* condicional                   ?:
+* assignment (atribuição)       = += -= *= %=
+```
