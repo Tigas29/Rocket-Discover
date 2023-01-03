@@ -1,26 +1,71 @@
-// let temperature = window.prompt(
-//   "Digite o valor da temperatura (ex: 50f / 50c n )"
-// );
-// let newTemperature = temperature.toLowerCase();
+const booksByCategory = [
+  {
+    category: "Riqueza",
+    books: [
+      {
+        title: "Os segredos da mente milionária",
+        author: "T. Harv Eker",
+      },
+      {
+        title: "O homem mais rico da Babilônia",
+        author: "George S. Clason",
+      },
+      {
+        title: "Pai rico, pai pobre",
+        author: "Robert T. Kiyosaki e Sharon L. Lechter",
+      },
+    ],
+  },
+  {
+    category: "Inteligência Emocional",
+    books: [
+      {
+        title: "Você é Insubstituível",
+        author: "Augusto Cury",
+      },
+      {
+        title: "Ansiedade – Como enfrentar o mal do século",
+        author: "Augusto Cury",
+      },
+      {
+        title: "Os 7 hábitos das pessoas altamente eficazes",
+        author: "Stephen R. Covey",
+      },
+    ],
+  },
+];
 
-// function ChangeToF() {
-//   let change = 0;
-//   let number = "";
-//   let result;
-//   if (newTemperature.includes("f") == true) {
-//     number = newTemperature.replace("f", "");
-//     change = ((number - 32) * 5) / 9;
+const total = booksByCategory.length;
 
-//     result = change + " graus em celsius";
-//   } else if (newTemperature.includes("c") == true) {
-//     number = newTemperature.replace("c", "");
-//     change = (number * 9) / 5 + 32;
-//     result = change + " graus em fahrenheit";
-//   } else {
-//     throw new Error("GRAU NAO IDENTIFICADO");
-//   }
+for (let category of booksByCategory) {
+  console.log("total de livros da categoria : ", category.category);
+  console.log(category.books.length);
+}
 
-//   return alert(result);
-// }
+function coutnAuthors() {
+  let authors = [];
+  for (let category of booksByCategory) {
+    for (let book of category.books) {
+      if (authors.indexOf(book.author) == -1) {
+        authors.push(book.author);
+      }
+    }
+  }
+  console.log(authors.length);
+}
 
-// ChangeToF();
+coutnAuthors();
+
+function coutnBooksOfAugutso() {
+  let books = [];
+  for (let category of booksByCategory) {
+    for (let book of category.books) {
+      if (books.author == "Augusto cury") {
+        books.push(book.author);
+      }
+    }
+  }
+  console.log(books.length);
+}
+
+coutnBooksOfAugutso();
