@@ -27,9 +27,7 @@ consolelog("hello World)
 - Conjunto de caracteres (texto)
 - aceita aspa simples e aspa duplas
 - é possível colocar expressão dentro de um template string
--
-
----
+- ***
 
 ## Number
 
@@ -83,9 +81,7 @@ Para entender variáveis podemos pensar nelas como nomes simbólicos para algum 
 - O tipo existe a partir do momento que um valor é atribuido.
 - Para ver qual o tipo de variável é a declaração, usamos o `typeof`
 - Podemos mudar o tipo de variavel, isso faz o js ser dinâmico.
--
-
----
+- ***
 
 # Scope e var, let e const
 
@@ -450,8 +446,10 @@ console.log(marcas);
 # Expressões e operadores
 
 - Toda expressão pode terminar com ponto e vírgula
+
   - São poucos casos que causaria erros se tiver a ausencia do ponto e virgula
   - Exemplo:
+
   ```
   // // Expressao que pode dar erro pela falta de ponto e virgula
 
@@ -464,6 +462,7 @@ console.log(marcas);
   // ele entender que a variavel é a funçao tbm
 
   ```
+
 - Operadors podem ser binario ou unario
 
 ```
