@@ -1,64 +1,31 @@
-/* child combinator  */
-body > div > p {
-  /* color: Red; */
-}
-/* siblings combinator  */
-div p + h1 {
-  /* color: blue; */
-}
-
-/* .childs p:first-child {
-  color: gray;
-} */
-
-/* .childs p:nth-of-type(2) {
-  color: red;
-} */
-
-/* .childs p:nth-child(3) {
-  color: blue;
-} */
-
-/* numeros pares  */
-/* .childs p:nth-child(odd) {
-  color: blue;
-} */
-/* numeros impares  */
-/* .childs p:nth-child(even) {
-  color: red;
-} */
-
-.childs p:hover {
-  color: green;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Aaaa aaaaa2 ."
+    "asdsasadasdas asdsasadasdas aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    "asdsasadasdas asdsasadasdas aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 }
 
-input:focus {
-  background-color: blue;
+.Aaaa {
+  grid-area: Aaaa;
+  background-color: red;
 }
 
-li {
-  position: relative;
-  font-size: 2rem;
+.aaaaa2 {
+  grid-area: aaaaa2;
+  background-color: green;
 }
 
-li::after {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  background-color: blue;
-  bottom: 0px;
+.asdsasadasdas {
+  grid-area: asdsasadasdas;
+  background-color: gray;
 }
 
-li::before {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  background-color: blue;
-  bottom: 0px;
-}
-
-li:nth-of-type(1):first-line {
-  font-weight: bold;
+.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa {
+  grid-area: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;
+  background-color: yellow;
 }
